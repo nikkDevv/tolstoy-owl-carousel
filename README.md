@@ -1,25 +1,29 @@
-# tolstoy-owl-carousel
-TOLSTOY EMBED COMBINED WITH OWL CARUSEL
+# Tolstoy Owl Carousel
 
-important! CONFIGURATION:
+Tolstoy Embed Combined with Owl Carousel
 
-Download Owl Carousel file: 
+## Important Configuration
 
-download link: https://owlcarousel2.github.io/OwlCarousel2/
+**Download Owl Carousel Files**
 
-IMPORT the following OWL CAROUSEL FILES TO ASSET FOLDER IN EDIT CODE:
+Download Link: [Owl Carousel Website](https://owlcarousel2.github.io/OwlCarousel2/)
 
-owl.carousel.min.css
-owl.theme.default.min.css
-owl.carousel.min.js
-jquery.min.js
+**Import the Following Owl Carousel Files to the Asset Folder in Your Code Editor:**
 
+1. `owl.carousel.min.css`
+2. `owl.theme.default.min.css`
+3. `owl.carousel.min.js`
+4. `jquery.min.js`
 
-INITIATE THE FILES IN theme.liquid file:
-<!-- Owl Carousel CSS --> before the </head> tag
+**Initiate the Files in `theme.liquid` File:**
+
+Add the following code in your `theme.liquid` file:
+
+```html
+<!-- Owl Carousel CSS (Place this before the </head> tag) -->
 <link rel="stylesheet" href="{{ 'owl.carousel.min.css' | asset_url }}">
 <link rel="stylesheet" href="{{ 'owl.theme.default.min.css' | asset_url }}">
 
- <!-- Owl Carousel JS --> before the </body> tag
+<!-- Owl Carousel JS (Place this before the </body> tag) -->
 <script src="{{ 'jquery.min.js' | asset_url }}" defer></script>
-<script src="{{ 'owl.carousel.min.js' | asset_url}}" defer></script>
+<script src="{{ 'owl.carousel.min.js' | asset_url }}" defer></script>
