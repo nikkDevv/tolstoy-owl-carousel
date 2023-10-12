@@ -1,0 +1,87 @@
+{% schema %}
+{
+  "name": "Carousel",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "carousel_item",
+      "name": "Carousel Item",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Video Embed Code",
+          "id": "video_embed"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Owl Tolstoy",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+{% if section.blocks.size > 0 %}
+<div class="owl-carousel">
+  {% for block in section.blocks %}
+    <div class="carousel-item">
+      {{ block.settings.video_embed | raw }}
+    </div>
+  {% endfor %}
+</div>
+<div class="btns">
+  <div class="customNextBtn">Next slide</div>
+  <div class="customPreviousBtn">Previous slide</div>
+</div>
+{% endif %}
+
+<style>
+
+.owl-carousel {
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+.carousel-item {
+    width: 100%;
+    height: auto;
+}
+  
+.btns{
+  display: table;
+  margin: 30px auto;
+}
+.customNextBtn, .customPreviousBtn{
+    float: right;
+    background: #2d9070;
+    color: #fff;
+    padding: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+</style>
+
+<script>
+window.onload = function() {
+  jQuery(document).ready(function(){
+    var owl = jQuery('.owl-carousel');
+    owl.owlCarousel({
+      loop:true,
+      margin:10,
+      nav:false,
+      items: 3,
+    });
+
+    // Custom Button
+    jQuery('.customNextBtn').click(function() {
+      owl.trigger('next.owl.carousel');
+    });
+    jQuery('.customPreviousBtn').click(function() {
+      owl.trigger('prev.owl.carousel');
+    });
+  });
+};
+</script>
